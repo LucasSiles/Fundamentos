@@ -1,0 +1,16 @@
+#include 'stdafx.h"
+#include <ionstream>
+
+using namespace std;
+  
+  void main()
+  {
+    float b,h,a
+    cout<<"Base";
+    cin>>b;
+    cout<<"Altura";
+    cin>>h;
+    a=(b*h)/2
+    cout<<"el area es";
+    getch();
+ Fin 
