@@ -1,0 +1,22 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main(){
+	float perimetro,area,radio,P;
+	P=3.14;
+	cout <<"Introduzca el radio "<<endl;
+	cin >> radio;
+	perimetro= 2*P*radio;
+	cout<<"El perimetro es: " <<endl;
+	cout<< perimetro <<endl;
+	area= P*(radio*radio);
+	cout <<"El area es: " <<endl;
+	cout << area <<endl;
+	getch();
+	return 0;
+}
+    
