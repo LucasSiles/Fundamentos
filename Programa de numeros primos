@@ -1,0 +1,33 @@
+// Programa.cpp : Defines the entry point for the console application.
+//autor Lucas Siles 26/09/2022
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;
+
+void main ()
+{
+	int N;
+	cout<<"Ingresar el numero: "<<endl;
+	cin>> N;
+    bool primo=true;
+	if(N == 1) primo = false;
+
+	for (int i=2; i<N; i++)
+	
+		if (N% i==0)
+		{
+			primo= false;
+			break;
+		}
+		{
+	if(primo==true)
+		 cout<<"El numero es primo"<<endl;
+	else cout<<"El numero no es primo"<<endl;
+		}
+	 
+getch ();
+}
+
