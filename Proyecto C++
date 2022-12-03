@@ -1,0 +1,108 @@
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include "stdlib.h"
+
+
+#define MAX 10
+using namespace std;
+
+
+struct MaterialData {	
+	string materi;	
+	double cantid;
+};
+
+void mostrar(MaterialData v[], int cantele, int dim);
+int resetear();
+void agregar(MaterialData v[], int& cantele, int tam);
+
+
+int main()
+{    
+	MaterialData vector[MAX];
+	int dim = 0;
+	int cantele = 0; 
+
+	
+    string nomuser;
+    string clavepw;
+    cout << "Ingrese Usuario :" << endl;
+    cin >> nomuser;
+	cout << "Ingrese Contrasenia :" << endl;
+	cin >> clavepw;
+	
+	
+	if (nomuser == "Lucas" && clavepw =="123"){
+	 
+	cout<<"Login Correcto";
+   system("cls");
+   
+  
+	int opcion;
+	do {
+		cout << endl << "\tMenu" << endl;
+		cout << "1. Agregar" << endl;
+		cout << "2. Resetear" << endl;
+		cout << "3. Mostrar" << endl;		
+		cout << "0. salir" << endl;
+		cin >> opcion;
+		switch (opcion) {
+		case 1: agregar(vector,cantele,dim);
+			break;
+		case 2: dim=resetear();
+			break;
+		case 3: mostrar(vector,cantele,dim);
+		case 0: cout << "salir";
+			break;
+		default: cout << "Opcion invalida";
+		}
+		system("cls");
+	} while (opcion != 0);
+	
+	getch();
+ 
+	 
+	 
+   
+	 
+	}else{
+	   
+	    cout<<"Login incorrecto";
+	    getch();
+	}
+}
+
+void mostrar(MaterialData v[], int cantele,int dim) {
+	cout << "===========================================" << endl;
+	for (int i = 0; i < cantele; i++) {
+		cout <<i<<" -> ["<< v[i].materi<<" - "<< v[i].cantid<<"]"<<endl;
+	}
+	cout << "==========================================="<<endl;	
+	cout << "Total tamanio       : " << dim<<endl;
+	cout << "Cantidad ocupado    : " << cantele << endl;
+	cout << "Cantidad disponible : " << dim - cantele << endl;
+	system("pause");
+}
+
+int resetear() {
+	int numero;
+	do {
+		cout << "Ingresar el tamaño del vector para iniciar, maximo es "<< MAX<<endl;
+		cin >> numero;
+	} while ((numero <= 0) || (numero > MAX));
+	return numero;
+}
+void agregar(MaterialData v[], int &cantele, int tam) {
+	if (cantele < tam) {
+		cout << "Nombre del material: "<< endl;
+		cin >> v[cantele].materi;		
+		cout << "Cantidad "<< endl;				
+		cin >> v[cantele].cantid;		
+		cantele = cantele + 1;
+	}
+	else {
+		cout << "No se puede agregar, no hay espacio"<<endl;
+		getch();
+	}
+}
